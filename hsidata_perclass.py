@@ -109,8 +109,8 @@ class HSIdataset(Dataset):
                 selected_x = coord_x[RandPerm_per[:ntrain_perclass[i]]]
                 selected_y = coord_y[RandPerm_per[:ntrain_perclass[i]]]
             elif datatype =='test':
-                selected_x = coord_x[RandPerm_per[ntrain_perclass[i]:ntrain_perclass[i]+n[i]]]
-                selected_y = coord_y[RandPerm_per[ntrain_perclass[i]:ntrain_perclass[i]+n[i]]]
+                selected_x = coord_x[RandPerm_per[ntrain_perclass[i]:]]
+                selected_y = coord_y[RandPerm_per[ntrain_perclass[i]:]]
             len_test[i] = len(selected_x)
             
             coords_x = np.concatenate([coords_x, selected_x])
