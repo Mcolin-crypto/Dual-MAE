@@ -100,7 +100,6 @@ class HSIdataset(Dataset):
         len_test = np.zeros(nclass,dtype=np.int64)
         for i in range(nclass):
             ntrain_perclass[i] = max(n[i] * ratio_pertrain,15)
-            ntrain_perclass[i] = min(ntrain_perclass[i],50)
             RandPerm_per = torch.randperm(
                 n[i], dtype=torch.int,
                 generator=torch.Generator().manual_seed(seed),
